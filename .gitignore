@@ -1,0 +1,9 @@
+flukahp
+flukadpm3
+*.o
+fortran/*.f
+*.mod
+aamod/*.f
+*.a
+
+
