@@ -209,6 +209,16 @@ sampling in one area by decreasing it in another area. There is no
 universally correct variance reduction, only the correct variance
 reduction for the a specific investigation.
 
+# Warnings
+
+* The performance of all Monte-Carlo codes is dependent on both direct
+CPU computation and the ability to search memory for library
+values. The current code allows the building of arbitary sized
+meshes. In testing (on some rather old hardware), the addition of large
+meshes (and/or large usrbin tallies) resulted in a dramatic (x50) slowdown.
+This was not shown in the CPU time but the wall clock time of each run.
+Care should be taken, particularly, running > 1M Pixel meshes.
+
 # Additions
 
 Code was left in the project for construction of multi-order magnet
@@ -216,6 +226,10 @@ fields (dipole,quad etc) and a system for sampling a source from a
 file. It is not necessary to use this but it shows the standard method
 of calling C++ from FLUKA and is convenient for those users who are building
 full synchrotron and accelerator models. Replace as needed.
+
+# License
+
+This code is released under GPL-3. 
 
 # Contacts
 
