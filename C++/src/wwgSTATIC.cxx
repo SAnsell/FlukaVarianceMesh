@@ -125,9 +125,9 @@ wwgSTATIC::setEnergy(const size_t Index,
 void
 wwgSTATIC::setLow(const size_t Index,const Geometry::Vec3D& L)
   /*!
-    Set the energy bins
-    [assumption set before insertion]
-    \param Index of object 
+    Set the low point of the mesh
+    \param Index :: Index of mesh  (count from 1)
+    \param L :: Vec3D low point
   */
 {
   Mesh3D& mItem=getCreateMesh(Index);
@@ -168,10 +168,13 @@ wwgSTATIC::setGrid(const size_t Index,const size_t EI,
 		   const size_t A,const size_t B,const size_t C,
 		   const double V)
   /*!
-    Set the energy value
-    [assumption set before insertion]
+    Set teh grid value base on energy bin/xIndex/yIndex/zIdnex 
     \param Index :: index of mesh
     \param EI  :: energy index
+    \param A  :: x index
+    \param B  :: y index
+    \param C  :: z index
+    \param V  :: value [log values :: -ve ]
   */
 {
   Mesh3D& mItem=getCreateMesh(Index);
@@ -189,7 +192,7 @@ wwgSTATIC::calcImportance(const int particle,const double Energy,
     Care should be taken because wwg store WEIGHTS. Thus in Fluka 
     importances are increasing and so the ratio needs to be A/B.
 
-    \param Energy :: Energy [MeV]
+    \param Energy :: Energy [GeV]
 
     \param Ax :: Initial point
     \param Ay :: Initial point
@@ -210,8 +213,6 @@ wwgSTATIC::calcImportance(const int particle,const double Energy,
   double IA(0.0);
   double IB(0.0);
 
-  std::cout<<"QEnergy == "<<Energy<<":::"<<BPt<<std::endl;
-  
   // this keeps the order
   std::map<size_t,Mesh3D>::const_iterator mc;
   for(mc=Grid.begin();mc!=Grid.end();mc++)

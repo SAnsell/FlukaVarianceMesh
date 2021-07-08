@@ -265,6 +265,7 @@ void
 Mesh3D::setLow(const Geometry::Vec3D& A)
   /*!
     Set the low point
+    \param A :: Low point [not checked]
   */
 {
   APoint=A;
@@ -279,6 +280,7 @@ void
 Mesh3D::setHigh(const Geometry::Vec3D& A)
   /*!
     Set the high point
+    \param A :: High point [not checked]
   */
 {
   BPoint=A;
@@ -314,6 +316,7 @@ Mesh3D::isValid(Geometry::Vec3D Pt) const
   /*!
     Determine if a point is within the rectangle zone
     \param Pt :: Point to test
+    \retur true if point in mesh
   */
 {
   Pt-=APoint;
@@ -326,7 +329,7 @@ double
 Mesh3D::value(const double Energy,Geometry::Vec3D Pt) const
   /*!
     Determine the value corresponding the mesh point (a,b,c)
-    \param Energy :: Energy [MeV]
+    \param Energy :: Energy [GeV]
     \param Pt :: Point to determine is in grid
     \return Vec3D point 
   */

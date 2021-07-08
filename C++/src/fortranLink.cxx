@@ -43,7 +43,6 @@
 #include "TallySTATIC.h"
 #include "fortranLink.h"
 
-//#include <unistd.h>
 
 void
 calcimportance_(const int* particle,const double* energy,
@@ -52,6 +51,8 @@ calcimportance_(const int* particle,const double* energy,
 		double* result)
   /*!
     Calculate the weight in a mesh between two points
+    \param particle :: Particle index [fluka value]
+    \param energy :: energy [GeV]
     \param xPtA :: start X Point [global]
     \param yPtA :: startY Point [global]
     \param zPtA :: start Z Point [global]
@@ -62,8 +63,7 @@ calcimportance_(const int* particle,const double* energy,
    */
 {
   wwgSTATIC& WWG=wwgSTATIC::Instance();
-  // move energy to MeV
-  *result=WWG.calcImportance(*particle,*energy*1e3,*xPtA,
+  *result=WWG.calcImportance(*particle,*energy,*xPtA,
 			     *yPtA,*zPtA,*xPtB,*yPtB,*zPtB);
   return;
 }
@@ -178,7 +178,7 @@ void buildmagnet_(const double* W,
   const std::string typeName(Input.substr(0,pos));
   const int ID(static_cast<int>(W[0])); 
 
-  // 5 Usricalls ::
+  // 5 Usricalls (support legacy system)::
   if (typeName=="Octo" ||  typeName=="Quad" ||
       typeName=="Dipl" ||  typeName=="Hexa" ||
       typeName=="Magn")

@@ -5,7 +5,6 @@ SHELL=/bin/sh
 # First where are we going to get the sources
 SRCDIR=.
 FLUKABASE=$(FLUPRO)
-INTERFACE=$(FLUKABASE)/lib/interface
 GCCNUM=9.3.0
 #
 ## Fortran compiler and compilation flags
@@ -87,13 +86,6 @@ BOTHVAXOBJ = dpmjex.o evdini.o eventd.o eveout.o \
              eveqmd.o evqmdi.o idd2f.o idf2d.o  \
              rqmdex.o zrrqcm.o zrdpcm.o   
 
-INTEROBJ=   $(INTERFACE)/asciir.o  $(INTERFACE)/dpmjex.o  \
-            $(INTERFACE)/evdini.o  $(INTERFACE)/eventd.o  \
-            $(INTERFACE)/eveout.o  $(INTERFACE)/eveqmd.o  \
-            $(INTERFACE)/evqmdi.o  $(INTERFACE)/glaubr.o  \
-            $(INTERFACE)/idd2f.o   $(INTERFACE)/idf2d.o   \
-            $(INTERFACE)/rqm2pr.o  $(INTERFACE)/rqmdex.o  \
-            $(INTERFACE)/zrdpcm.o  $(INTERFACE)/zrrqcm.o
 
 RQMLATEST= latest/absorb.o latest/achain.o latest/angel.o latest/angin.o \
            latest/angnp.o latest/antibb.o latest/barwgh.o latest/bele.o \
