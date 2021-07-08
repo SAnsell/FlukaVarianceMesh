@@ -48,13 +48,13 @@ need to be edited. Currently there are three variable that need to be
 changed: First is the variable GCCNUM and the second is the variable
 EXTLIB and thirdly CPPLIB.
 
-* GCCNUM simply the gcc number that the FLUKA build was downloaded for
+* GCCNUM is simply the gcc number that the FLUKA build was downloaded for
 (and is on your computer). EXTLIB points to the {\bf static} libraries
 that you will need to compile FLUKA, and CPPLIB points to the
 libstdc++ static library. If your system is different that additional
 libraries can be added here.
 
-* GCCNUM is not supported below 9.3.0 (C++17 issues in the
+* GCCNUM is not directly supported below 9.3.0 (C++17 issues in the
 code). However, it is reasonably easy to code round this if it is a
 problem (even it the code gets a bit more verbose). The performance of gcc-8
 is lower than gcc-9 for the C++ part of the code.
@@ -73,9 +73,9 @@ libraries accordingly.
 
 ## Compiling
 
-* Hopefully, compiling in simply a matter of running {\it make}. 
-The output should be flukahp and flukadpm3. ldd flukahp should show
-that it is a static build. 
+* Hopefully, compiling in simply a matter of running *make*
+The output should be *flukahp* and *flukadpm3*. The command 
+*ldd flukahp* should show that it is a static build. 
 
 ## Execution 
 
