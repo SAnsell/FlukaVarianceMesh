@@ -1,4 +1,28 @@
+*----------------------------------------------------------------------*
+*                                                                      *
+*     Copyright (C) 2003-2019:  CERN & INFN                            *
+*     All Rights Reserved.                                             *
+*                                                                      *
+*     New source for FLUKA9x-FLUKA20xy:                                *
+*                                                                      *
+*     Created on 07 January 1990   by    Alfredo Ferrari & Paola Sala  *
+*                                                   Infn - Milan       *
+*                                                                      *
+*  This is just an example of a possible user written source routine.  *
+*  note that the beam card still has some meaning - in the scoring the *
+*  maximum momentum used in deciding the binning is taken from the     *
+*  beam momentum.  Other beam card parameters are obsolete.            *
+*                                                                      *
+*       Output variables:                                              *
+*                                                                      *
+*              Nomore = if > 0 the run will be terminated              *
+*                                                                      *
+*----------------------------------------------------------------------*
+*
+*     Modifications by Stuart Ansell 2021
+*      
 
+      
       subroutine processHeavyIon
 
       INCLUDE '(DBLPRC)'

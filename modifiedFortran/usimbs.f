@@ -1,5 +1,3 @@
-*$ CREATE USIMBS.FOR
-*COPY USIMBS
 *
 *=== Usimbs ===========================================================*
 *
@@ -20,8 +18,10 @@
 *     Created on   02 july 2001    by    Alfredo Ferrari & Paola Sala  *
 *                                                   Infn - Milan       *
 *                                                                      *
-*     Last change on 30-oct-08     by    Alfredo Ferrari               *
-*                                                                      *
+*     Last official Fluka change on 30-oct-08  by    Alfredo Ferrari   *
+*
+*     Modified by Stuart Ansell (2021), Max IV 
+*      
 *     Input variables:                                                 *
 *                Mreg = region at the beginning of the step            *
 *              Newreg = region at the end of the step                  *
@@ -44,9 +44,9 @@
      &     xtrack(ntrack),ytrack(ntrack),ztrack(ntrack),
      &     result)
 
-      if (result.ne.1.0) then
-         print *,'Call to calcImportance',Etrack,result
-      endif
+c      if (result.ne.1.0) then
+c         print *,'Call to calcImportance',Etrack,result
+c      endif
 
       FIMP   = result
       RETURN

@@ -1,3 +1,21 @@
+*
+*----------------------------------------------------------------------*
+*                                                                      *
+*     Copyright (C) 2003-2019:  CERN & INFN                            *
+*     All Rights Reserved.                                             *
+*                                                                      *
+*     USeR INItialization: this routine is called every time the       *
+*                          USRICALL card is found in the input stream  *
+*                                                                      *
+*     Created on 01 January 1991   by    Alfredo Ferrari & Paola Sala  *
+*                                                   Infn - Milan       *
+*                                                                      *
+*----------------------------------------------------------------------*
+*
+*     Modified by Stuart Ansell 2021
+*     It makes direct call to fortranLink.      
+*
+      
       subroutine CALCINDEX(iDet,iOut)
 !
 !     horrible function to convert meshXX into the detector index
