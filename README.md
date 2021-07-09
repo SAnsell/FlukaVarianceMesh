@@ -56,10 +56,11 @@ that you will need to compile FLUKA, and CPPLIB points to the
 libstdc++ static library. If your system is different that additional
 libraries can be added here.
 
-* GCCNUM is not directly tested below 9.2.1 (potential C++17 issues in
-the code). However, it is reasonably easy to code round this if it is
-a problem (even it the code gets a bit more verbose). The performance
-of gcc-8 will be lower than gcc-9 for the C++ part of the code.
+* GCCNUM has not been directly tested below 9.2.1 (potential C++17
+issues in the code). However, it is reasonably easy to code round this
+if it is a problem (even it the code gets a bit more verbose). The
+performance of gcc-8 will be lower than gcc-9 for the C++ part of the
+code.
 
 **Notes:** 
 
@@ -165,12 +166,33 @@ There is no default.
 * **wwg** is the primary cell based system. It is indexing: energyBin
 (W2), xBin (W3), yBin (W4), zBin (W5) and the bins are numbered
 from 1. The value is placed in W6. The value is given as the negative
-root of the log value.  Variance value is NOT importance, it using the
+root of the log value.  Variance value is NOT importance, it is using the
 system of weight that is familiar with MCNP(X), PHITS, Adjoint. It is
 simply the inverse of importance. Acceptable values are all less
 than 0. Note that rounding errors can occur is the values are
 difficult to represent in floating point (e.g. values less than -150).
 
+# Generating a useful weight mesh
+
+This code does not generate the weight mesh for the user, it only
+reads and processes the mesh within FLUKA. In principle, the mesh
+could be written by hand, however that is extremely in-practical,
+unless the mesh is a one/two/three cell mesh. There exist a number of
+codes to provide meshes
+e.g. [ADVANTG](https://info.ornl.gov/sites/publications/files/pub46035.pdf)
+and the weight window they they generate could be rapidly converted to
+this format by writing a small script.
+
+The example here was generated from
+[CombLayer](https://github.com/SAnsell/CombLayer). This program allows
+the generation of the complete output file including the weight window
+mesh.  CombLayer provides an method of rapidly building
+rotating, displacing, morphing and inserting components into a fulll model,
+which facilitates the construction of construct of very large facility wide
+models. The CombLayer maintains a fully geometric representation
+(before writing the FLUKA input file) and can use 
+geometric tracking to construct the weight window
+meshes, using the geometry, material and density of the model.
 
 # Example
 
@@ -226,10 +248,11 @@ reduction for the a specific investigation.
 * The performance of all Monte-Carlo codes is dependent on both direct
 CPU computation and the ability to search memory for library
 values. The current code allows the building of arbitary sized
-meshes. In testing (on some rather old hardware), the addition of large
-meshes (and/or large usrbin tallies) resulted in a dramatic (x50) slowdown.
-This was not shown in the CPU time but the wall clock time of each run.
-Care should be taken, particularly, running > 1M Pixel meshes.
+meshes. In testing (on some rather old hardware), the addition of
+large meshes (and/or large usrbin tallies) resulted in a dramatic
+(x50) slowdown due to cache/memory page faults. This was not shown in
+the CPU time but the wall clock time of each run.  Care should be
+taken, particularly, running > 1M pixel meshes.
 
 # Additions
 
