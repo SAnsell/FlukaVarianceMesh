@@ -195,7 +195,7 @@ tar:
            ./C++/src/*.cxx ./C++/include/*.h 
 
 clean:
-	xrm -f ./*.mod ./*.o ./C++/*.o fortran/*.o \
+	rm -f ./*.mod ./*.o ./C++/*.o fortran/*.o \
         aamod/*.o \
         lib/libFluka.a lib/libFluka2.a  lib/libDPMMVAX.a \
         flukahp flukadpm3
