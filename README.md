@@ -176,12 +176,12 @@ difficult to represent in floating point (e.g. values less than -150).
 
 This code does not generate the weight mesh for the user, it only
 reads and processes the mesh within FLUKA. In principle, the mesh
-could be written by hand, however that is extremely in-practical,
+could be written by hand, however that is extremely impractical,
 unless the mesh is a one/two/three cell mesh. There exist a number of
-codes to provide meshes
-e.g. [ADVANTG](https://info.ornl.gov/sites/publications/files/pub46035.pdf)
-and the weight window they they generate could be rapidly converted to
-this format by writing a small script.
+codes to generate meshes
+e.g. [ADVANTG](https://info.ornl.gov/sites/publications/files/pub46035.pdf).
+The weight window meshes, which they generate could be rapidly converted to
+this format, by writing a small script.
 
 The example here was generated from
 [CombLayer](https://github.com/SAnsell/CombLayer). This program allows
