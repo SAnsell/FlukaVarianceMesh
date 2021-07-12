@@ -2022,7 +2022,7 @@ R4290009 8 +( +s4280013 | -s4280014 ) +s4280002
 END
 GEOEND
 * WEIGHT CARDS 
-USRICALL         2.0   0.01000       2.0    1300.0                    wwgEng    
+USRICALL         2.0     1e-05   0.00200   1.30000                    wwgEng
 USRICALL         2.0       1.0      80.0       1.0                    wwgSize   
 USRICALL         2.0   -1000.0   10000.0    -100.0                    wwgLow    
 USRICALL         2.0    -100.0   10250.0     100.0                    wwgHigh   
@@ -2185,8 +2185,8 @@ USRICALL         2.0       2.0       1.0      76.0       1.0  -7.30700wwg
 USRICALL         2.0       2.0       1.0      77.0       1.0   -7.4905wwg       
 USRICALL         2.0       2.0       1.0      78.0       1.0   -7.7127wwg       
 USRICALL         2.0       2.0       1.0      79.0       1.0      -8.0wwg       
-USRICALL         2.0       2.0       1.0      80.0       1.0      -8.0wwg       
-USRICALL         1.0   0.01000       2.0    1300.0                    wwgEng    
+USRICALL         2.0       2.0       1.0      80.0       1.0      -8.0wwg
+USRICALL         2.0     1e-05   0.00200   1.30000                    wwgEng
 USRICALL         1.0      30.0      50.0       1.0                    wwgSize   
 USRICALL         1.0    -400.0    9900.0     -30.0                    wwgLow    
 USRICALL         1.0    -320.0    9970.0      30.0                    wwgHigh   
